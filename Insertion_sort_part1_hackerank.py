@@ -16,22 +16,22 @@ def insertionSort1(n, arr):
     # Write your code here
     
     last_num = arr[n-1]
+    
+    for i in range(n-2, -1, -1):
+        if arr[i] > last_num:
+            arr[i+1] = arr[i]
+            print(*arr)
+        else:
+            arr[i+1] = last_num
+            print(*arr)
+            break
+            
     if last_num < arr[0]:
-        arr[0] = last_num
-        print(*arr)
-    else:
-        for i in range(n-2, -1, -1):
-            if arr[i] > last_num:
-                arr[i+1] = arr[i]
-                print(*arr)
-            else:
-                arr[i+1] = last_num
-                print(*arr)
-                break
-        
+       arr[0] = last_num
+       print(*arr)       
+       
 if __name__ == '__main__':
     n = int(input().strip())
-
     arr = list(map(int, input().rstrip().split()))
-
+    
     insertionSort1(n, arr)

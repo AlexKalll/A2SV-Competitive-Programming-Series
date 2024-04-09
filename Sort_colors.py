@@ -7,9 +7,8 @@ class Solution:
         n = len(nums)
         for i in range(n-1):
             swapped = False
-            for j in range(0, n - i - 1):
+            for j in range(n - i - 1):
                 if nums[j] > nums[j + 1]:
-                    # Swap elements if they are out of order
                     nums[j], nums[j + 1] = nums[j + 1], nums[j]
                     swapped = True
             if not swapped:
